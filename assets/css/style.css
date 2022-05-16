@@ -1,0 +1,93 @@
+/* Add margin bottom and top to each widgets */
+.component {
+    margin-bottom: 3px;
+    margin-top: 3px;
+}
+
+/* Set cursor to pointer on table with selectable rows */
+.table-hover tr {
+    cursor: pointer;
+}
+
+/* Set a red border to invalid input fields in forms */
+input[type='text'].ng-invalid.ng-dirty, input[type='email'].ng-invalid.ng-dirty,
+input[type='number'].ng-invalid.ng-dirty, input[type='password'].ng-invalid.ng-dirty {
+  border-color: #C00;
+  border-width: 1px;
+}
+
+/* Add a red star after required inputs */
+.control-label--required:after {
+  content: " *";
+  color: #C00;
+}
+.btn-invalid{
+    border-color: #C00;
+    border-width: 1px;
+}
+
+.descheckbox input[type="checkbox"] {
+    width: 110%;
+    left: 0%;
+    top: -21px;
+    height: 55px;
+    opacity: 0%;
+}
+
+.descheckbox {
+    width: 48.5%;
+    top: 10px;
+    left: 25.75%;
+    margin: auto;
+}
+
+
+.descheckboxMini input[type="checkbox"] {
+   
+    width: 100px;
+    height: 35px;
+    top: -20px;
+    opacity: 0%;
+    left:0px;
+    
+}
+
+.descheckboxMini {
+    margin:4px;
+    border-radius:4px;
+    border:1px solid #D0D0D0;
+    overflow: hidden;
+    width: 70px;
+    left: 40%;
+}
+
+.descheckboxMini label {
+    width:50px;
+    height: 20px;
+}
+
+.descheckboxMini label span {
+    text-align:center;
+    padding:3px 0px;
+    display:block;
+}
+
+.descheckboxMini label input {
+    position:absolute;
+    top:-20px;
+}
+
+.boton .btn{
+    width: 50%;
+    height: 50px;
+}
+
+.bonita-modal{
+    overflow-y: auto;
+}
+
+.modal-open .datepicker,
+.modal-open .timepicker {
+    z-index: 9999;
+}
+

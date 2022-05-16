@@ -1,0 +1,54 @@
+<div ng-class="{
+    'form-horizontal': properties.labelPosition === 'left' && !properties.labelHidden,
+    'row': properties.labelPosition === 'top' && !properties.labelHidden || properties.labelHidden
+    }">
+    <div class="form-group">
+        <label
+            ng-if="!properties.labelHidden"
+            ng-class="{ 'control-label--required': properties.required }"
+            class="control-label col-xs-{{ !properties.labelHidden && properties.labelPosition === 'left' ? properties.labelWidth : 12 }}"
+            ng-bind-html="properties.label | uiTranslate">
+        </label>
+
+        <div
+            class="col-xs-{{ 12 - (!properties.labelHidden && properties.labelPosition === 'left' ? properties.labelWidth : 0) }}">
+            <p class="input-group">
+                <input class="form-control"
+                       name="{{ctrl.name}}"
+                       type="text"
+                       placeholder="{{properties.placeholder | uiTranslate}}"
+                       autocomplete="off"
+                       ng-model="properties.value"
+                       ng-readonly="properties.readOnly"
+                       ng-required="properties.required"
+                       data-container="body"
+                       data-autoclose="1"
+                       data-timezone="UTC"
+                       date-format="{{properties.dateFormat | uiTranslate}}"
+                       data-trigger="focus"
+                       data-start-week="{{ctrl.firstDayOfWeek}}"
+                       data-max-date="today" 
+                       bs-datepicker>
+
+                <span class="input-group-btn">
+                    
+                    <button type="button"
+                            class="btn btn-default calendar
+                               {{$form[ctrl.name].$dirty && ($form[ctrl.name].$error.date || $form[ctrl.name].$error.parse ||
+                               (properties.required && $form[ctrl.name].$error.required)) ? 'btn-invalid':''}}"
+                            ng-click="ctrl.openDatePicker()"
+                            ng-disabled="properties.readOnly">
+                        <i class="glyphicon glyphicon-calendar"></i>
+                    </button>
+                </span>
+            </p>
+           <div class="error-msgs" ng-messages="$form.customInput.$error" ng-if="$form.customInput.$dirty">
+                    <div ng-message="emailValidator">Invalid Email ID provided</div>
+                    <div ng-message="ageValidator">Persons aged less than 18 years not eligible</div>
+                    <div ng-message="panValidator">Invalid PAN no entered</div>
+                    <div ng-message="aadhaarValidator">Invalid Aadhaar No entered</div>
+                    <div ng-message="nameValidator">Names cannot have special/numeric characters</div>
+                </div>
+        </div>
+    </div>
+</div>
